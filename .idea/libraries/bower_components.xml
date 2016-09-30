@@ -1,0 +1,31 @@
+<component name="libraryTable">
+  <library name="bower_components" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.tpls.js" />
+        <item url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.js" />
+        <item url="file://$USER_HOME$/bower_components/angular/angular.js" />
+        <item url="file://$USER_HOME$/bower_components/angular/index.js" />
+        <item url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/test/protractor/login.js" />
+        <item url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/Gruntfile.js" />
+        <item url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/index.js" />
+        <item url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/protractor.conf.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.tpls.min.js" />
+      <root url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.min.js" />
+      <root url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.tpls.js" />
+      <root url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.js" />
+      <root url="file://$USER_HOME$/bower_components/angular/angular.js" />
+      <root url="file://$USER_HOME$/bower_components/angular/index.js" />
+      <root url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/test/protractor/login.js" />
+      <root url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/Gruntfile.js" />
+      <root url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/index.js" />
+      <root url="file://$USER_HOME$/bower_components/stormpath-sdk-angularjs/protractor.conf.js" />
+      <root url="file://$USER_HOME$/bower_components/angular/angular.min.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
