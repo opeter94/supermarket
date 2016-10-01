@@ -2,7 +2,7 @@
 
 angular.module('supermarketApp')
     .controller('PageNotFoundCtrl', function ($scope, $timeout, $interval, $window) {
-        $scope.secondsBeforeRedirection = 500;
+        $scope.secondsBeforeRedirection = 5;
         $timeout(function() {
             $window.location.href = '/';
         }, $scope.secondsBeforeRedirection * 1000);
