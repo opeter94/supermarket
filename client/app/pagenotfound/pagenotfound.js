@@ -6,6 +6,6 @@ angular.module('supermarketApp')
             .state('pagenotfound', {
                 url: '/pagenotfound',
                 templateUrl: 'app/pagenotfound/pagenotfound.html',
-                controller: 'PageNotFoundCtrl'
+                controller: 'PageNotFoundController'
             });
     });

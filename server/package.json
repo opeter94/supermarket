@@ -1,0 +1,36 @@
+{
+  "name": "supermarket",
+  "version": "0.3.0",
+  "scripts": {
+    "start": "node server.js",
+    "test": "karma start karma.conf.js"
+  },
+  "description": "supermarket app",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "helmet": "^2.3.0",
+    "moment": "^2.15.1"
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opeter94/supermarket.git"
+  },
+  "keywords": [
+    "supermarket",
+    "node.js",
+    "angular"
+  ],
+  "author": "Peter Orsos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/opeter94/supermarket/issues"
+  },
+  "homepage": "https://github.com/opeter94/supermarket#readme"
+}

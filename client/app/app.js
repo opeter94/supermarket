@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('supermarketApp', [
-    'ngCookies',
-    'ngResource',
+    //'ngCookies',
+    //'ngResource',
     'ui.router'
 ])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {

@@ -1,0 +1,16 @@
+{
+  "name": "karma",
+  "version": "1.0.0",
+  "description": "test modules for supermarket app",
+  "main": "karma.conf.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine-core": "^2.5.2",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma": "^1.3.0",
+    "karma-jasmine": "^1.0.2"},
+  "scripts": {},
+  "author": "",
+  "license": "ISC"
+}

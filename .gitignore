@@ -29,3 +29,6 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 .idea/*
 /apiKey-4Z0RRVAPVNSPYCAZCQKP5RPV6.properties
+/client/bower_components/
+/server/node_modules/
+/client/karma/node_modules/
