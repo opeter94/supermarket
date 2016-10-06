@@ -13,7 +13,7 @@ app.use(logger.logRequest);
 // set express static content root to 'client' directory
 app.use(express.static(config.clientRoot));
 
-// expose the html body data on req.body
+// expose the html body data on req.body, parse as json
 app.use(bodyParser.urlencoded({
     extended: true
 }));
