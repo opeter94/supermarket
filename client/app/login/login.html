@@ -1,7 +1,23 @@
-<div ng-controller="LoginCtrl">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Supermarket</title>
+</head>
+<body>
+<div ng-app="supermarketApp" ng-controller="LoginController">
     <h1>Login</h1>
-    <form>
-        Username:<input ng-model="userName" required>
-        Password:<input ng-model="password" type="password" required>
+    <form name="loginForm" ng-submit="submitForm()">
+        Username:<input ng-model="user.userName" required><br/>
+        Password:<input ng-model="user.password" type="password" required><br/>
+        <button type="submit">Submit</button>
     </form>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+<script src="/app/app.js"></script>
+<script src="/app/login/login.controller.js"></script>
+</body>
+</html>
