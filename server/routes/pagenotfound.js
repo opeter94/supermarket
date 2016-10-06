@@ -5,9 +5,9 @@ var path = require('path');
 var config = require('../config/config.js');
 var router = express.Router();
 
-var pageNotFoundPage = path.join(config.clientRoot, 'app', 'pagenotfound', 'pagenotfound.html');
+var indexPage = path.join(config.clientRoot, 'index.html');
 router.all('*', function(req, res) {
-    res.sendFile(pageNotFoundPage);
+    res.sendFile(indexPage);
 });
 
 module.exports = router;

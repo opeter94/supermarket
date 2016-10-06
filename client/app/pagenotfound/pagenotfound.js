@@ -5,7 +5,7 @@ angular.module('supermarketApp')
         $stateProvider
             .state('pagenotfound', {
                 url: '/pagenotfound',
-                templateUrl: 'app/pagenotfound/pagenotfound.html',
+                templateUrl: '/app/pagenotfound/pagenotfound.html',
                 controller: 'PageNotFoundController'
             });
     });

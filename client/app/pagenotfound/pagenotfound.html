@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Supermarket</title>
-</head>
-<body>
-<div ng-app="supermarketApp" ng-controller="PageNotFoundController">
+<div ng-controller="PageNotFoundController">
     <h1>Ooops..</h1>
     <h2>Something went wrong..The page you are looking for does not exist.</h2>
     <h2>You will be redirected to the main page in..{{secondsBeforeRedirection}}</h2>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
-<script src="/app/app.js"></script>
-<script src="/app/pagenotfound/pagenotfound.controller.js"></script>
-</body>
-</html>

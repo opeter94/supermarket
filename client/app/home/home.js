@@ -3,9 +3,9 @@
 angular.module('supermarketApp')
     .config(function ($stateProvider) {
         $stateProvider
-            .state('login', {
+            .state('home', {
                 url: '/',
-                templateUrl: '/app/login/login.html',
-                controller: 'LoginController'
+                templateUrl: '/app/home/home.html',
+                controller: 'HomeController'
             });
     });
