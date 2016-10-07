@@ -9,4 +9,4 @@ logRequest = function (req, res, next) {
     next();
 };
 
-module.exports.logRequest = logRequest;
+module.exports.logRequests = logRequest;

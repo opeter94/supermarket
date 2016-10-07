@@ -4,7 +4,7 @@ angular.module('supermarketApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('login', {
-                url: '/',
+                url: '/login',
                 templateUrl: '/app/login/login.html',
                 controller: 'LoginController'
             });
