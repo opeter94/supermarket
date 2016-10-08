@@ -1,8 +1,20 @@
 <div class="container" ng-controller="LoginController">
     <h1>Login</h1>
     <form name="loginForm" ng-submit="submitForm()">
-        Username:<input ng-model="user.userName" required><br/>
-        Password:<input ng-model="user.password" type="password" required><br/>
-        <button type="submit">Submit</button>
+        <table>
+            <tr>
+                <td>Username:</td>
+                <td><input ng-model="user.userName" required><br/></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input ng-model="user.password" type="password" required><br/></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Submit</button>
+                </td>
+            </tr>
+        </table>
     </form>
 </div>
