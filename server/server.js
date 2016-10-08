@@ -2,6 +2,7 @@ var express = require("express");
 var app = express();
 var loginRouter = require('./routes/login');
 var pageNotFoundRouter = require('./routes/pagenotfound');
+var registerRouter = require('./routes/register');
 var config = require('./config/config');
 var logger = require('./libs/logger/logger');
 var bodyParser = require('body-parser');
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 
 // apply defined routes from routes folder
 app.use(loginRouter);
+app.use(registerRouter);
 // pageNotFound must be the last one
 app.use(pageNotFoundRouter);
 
