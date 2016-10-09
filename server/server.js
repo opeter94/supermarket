@@ -6,6 +6,7 @@ var registerRouter = require('./routes/register');
 var config = require('./config/config');
 var logger = require('./libs/logger/logger');
 var bodyParser = require('body-parser');
+var models = require('./models/models');
 
 // log info about every request, this must be done before any other middleware service(used as first middleware)
 app.use(logger.logRequests);
@@ -25,7 +26,9 @@ app.use(registerRouter);
 // pageNotFound must be the last one
 app.use(pageNotFoundRouter);
 
-app.listen(3000, function () {
-    console.log('Web server started.');
-    console.log('Listening on port 3000.')
+models.sequelize.sync().then(function () {
+    app.listen(3000, function () {
+        console.log('Web server started.');
+        console.log('Listening on port 3000.')
+    })
 });

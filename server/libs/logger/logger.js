@@ -1,6 +1,6 @@
 var moment = require('moment');
 
-logRequest = function (req, res, next) {
+logRequests = function (req, res, next) {
     var ip = req.headers['x-forwarded-for'] ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
@@ -9,4 +9,4 @@ logRequest = function (req, res, next) {
     next();
 };
 
-module.exports.logRequests = logRequest;
+module.exports.logRequests = logRequests;
