@@ -1,24 +1,49 @@
 <link href="/app/register/register.css" rel="stylesheet" type="text/css">
-<div class="container register" ng-controller="RegisterController">
-    <h1>Register</h1><br/><br/>
-    <form ng-submit="submitForm()">
-        <table>
-            <tr>
-                <td class="inputLabelCell"><label for="userName">Username</label></td>
-            <tr>
-                <td><input id="userName" ng-model="user.userName" required><br/></td>
-            </tr>
-            <tr>
-                <td class="inputLabelCell"><label for="password">Password</label></td>
-            <tr>
-                <td><input id="password" ng-model="user.password" type="password" required><br/></td>
-            </tr>
-            <tr>
-                <td>
-                    <br/>
-                    <button name="login" id="login" type="submit">Register</button>
-                </td>
-            </tr>
-        </table>
-    </form>
+<div class="container register">
+    <h1>Register</h1>
+    <div class="formWrapper">
+        <form ng-submit="submitForm()">
+            <table>
+                <tr>
+                    <td class="inputLabelCell"><label for="userName" required>Username</label></td>
+                    <td class="inputLabelCell"><label for="city">City</label></td>
+                </tr>
+                <tr>
+                    <td><input id="userName" ng-model="user.userName" required></td>
+                    <td><input id="city" ng-model="user.city" required></td>
+                </tr>
+                <tr>
+                    <td class="inputLabelCell"><label for="firstName">First Name</label></td>
+                    <td class="inputLabelCell"><label for="address">Address</label></td>
+                </tr>
+                <tr>
+                    <td><input id="firstName" ng-model="user.firstName"></td>
+                    <td><input id="address" ng-model="user.address" required></td>
+                </tr>
+                <tr>
+                    <td class="inputLabelCell"><label for="lastName">Last Name</label></td>
+                    <td class="inputLabelCell"><label for="password">Password</label></td>
+                </tr>
+                <tr>
+                    <td><input id="lastName" ng-model="user.lastName"></td>
+                    <td><input id="password" ng-model="user.password" type="password" required></td>
+                </tr>
+                <tr>
+
+                    <td class="inputLabelCell"><label for="email">E-Mail</label></td>
+                    <td class="inputLabelCell"><label for="passwordConfirm">Confirm Password</label></td>
+                </tr>
+                <tr>
+                    <td><input id="email" ng-model="user.email" required><br/></td>
+                    <td><input id="passwordConfirm" ng-model="user.passwordConfirm" required><br/></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <br/>
+                        <button name="login" id="login" type="submit">Register</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </div>

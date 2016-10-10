@@ -3,16 +3,18 @@ var config = {};
 
 config.clientRoot = path.join(__dirname, '..', '..', 'client');
 
+var host = 'localhost';
+var port = '3306';
 config.db = {
-    host: 'localhost',
-    port: '3306',
+    host: host,
+    port: port,
     userName: 'supermarket',
     password: 'app',
     database: 'supermarket',
     options: {
         define: {
-            host: config.db.host,
-            port: config.db.port,
+            host: host,
+            port: port,
             dialect: 'mysql',
             pool: {
                 max: 5,

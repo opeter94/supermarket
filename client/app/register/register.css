@@ -1,16 +1,42 @@
-td {
+h1 {
+    padding-bottom: 10px;
+}
+
+.register {
     text-align: center;
-    padding: 3px;
+}
+
+.formWrapper {
+    padding-top: 20px;
+    margin: auto;
+    vertical-align: middle;
+    display: inline-block;
+    height: 350px;
+    width: 800px;
+    border-radius: 25px;
+    border: solid rgba(200, 200, 200, 0.7);
+    background: rgba(200, 200, 200, 0.1);
 }
 
 form {
     display: inline-block;
 }
 
-div {
+td {
     text-align: center;
+    padding: 0 100px;
+}
+
+tr:nth-child(even) > td {
+    padding-bottom: 10px;
 }
 
 .inputLabelCell {
     text-align: left;
 }
+
+/*label[required]:after {*/
+    /*content: '*';*/
+    /*color: red;*/
+    /*display: inline;*/
+/*}*/
