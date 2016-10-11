@@ -35,8 +35,21 @@ tr:nth-child(even) > td {
     text-align: left;
 }
 
+input, select, textarea {
+    width: 200px;
+
+    -ms-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.ng-pristine .ng-invalid-required {
+    box-shadow: none;
+}
+
 /*label[required]:after {*/
-    /*content: '*';*/
-    /*color: red;*/
-    /*display: inline;*/
+/*content: '*';*/
+/*color: red;*/
+/*display: inline;*/
 /*}*/

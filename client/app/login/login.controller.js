@@ -6,8 +6,7 @@ angular.module('supermarketApp')
             $http({
                 method: 'POST',
                 url: '/login',
-                data: {user: $scope.user},
-                headers : {'Content-Type': 'application/json'}
+                data: {user: $scope.user}
             })
         };
 

@@ -5,12 +5,17 @@
         <form ng-submit="submitForm()">
             <table>
                 <tr>
-                    <td class="inputLabelCell"><label for="userName" required>Username</label></td>
+                    <td class="inputLabelCell"><label for="userName">Username</label></td>
                     <td class="inputLabelCell"><label for="city">City</label></td>
                 </tr>
                 <tr>
                     <td><input id="userName" ng-model="user.userName" required></td>
-                    <td><input id="city" ng-model="user.city" required></td>
+                    <td>
+                        <select id="city" ng-model="user.city"
+                                ng-options="city.zip + ' ' + city.name for city in cities" required>
+                            <option></option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td class="inputLabelCell"><label for="firstName">First Name</label></td>
