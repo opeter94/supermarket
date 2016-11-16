@@ -1,54 +1,51 @@
 <link href="/app/register/register.css" rel="stylesheet" type="text/css">
-<div class="container register">
+<div class="container">
     <h1>Register</h1>
-    <div class="formWrapper">
-        <form ng-submit="submitForm()">
-            <table>
-                <tr>
-                    <td class="inputLabelCell"><label for="userName">Username</label></td>
-                    <td class="inputLabelCell"><label for="city">City</label></td>
-                </tr>
-                <tr>
-                    <td><input id="userName" ng-model="user.userName" required></td>
-                    <td>
-                        <select id="city" ng-model="user.city"
-                                ng-options="city.zip + ' ' + city.name for city in cities" required>
-                            <option></option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="inputLabelCell"><label for="firstName">First Name</label></td>
-                    <td class="inputLabelCell"><label for="address">Address</label></td>
-                </tr>
-                <tr>
-                    <td><input id="firstName" ng-model="user.firstName"></td>
-                    <td><input id="address" ng-model="user.address" required></td>
-                </tr>
-                <tr>
-                    <td class="inputLabelCell"><label for="lastName">Last Name</label></td>
-                    <td class="inputLabelCell"><label for="password">Password</label></td>
-                </tr>
-                <tr>
-                    <td><input id="lastName" ng-model="user.lastName"></td>
-                    <td><input id="password" ng-model="user.password" type="password" required></td>
-                </tr>
-                <tr>
-
-                    <td class="inputLabelCell"><label for="email">E-Mail</label></td>
-                    <td class="inputLabelCell"><label for="passwordConfirm">Confirm Password</label></td>
-                </tr>
-                <tr>
-                    <td><input id="email" ng-model="user.email" required><br/></td>
-                    <td><input id="passwordConfirm" ng-model="user.passwordConfirm" required><br/></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <br/>
-                        <button name="login" id="login" type="submit">Register</button>
-                    </td>
-                </tr>
-            </table>
+    <div class="inner">
+        <form ng-submit="submit()">
+            <div id="left">
+                <p>
+                    <label for="userName">Username</label><br/>
+                    <input id="userName" ng-model="user.userName" required>
+                </p>
+                <p>
+                    <label for="firstName">First Name</label><br/>
+                    <input id="firstName" ng-model="user.firstName">
+                </p>
+                <p>
+                    <label for="lastName">Last Name</label><br/>
+                    <input id="lastName" ng-model="user.lastName">
+                </p>
+                <p>
+                    <label for="email">E-Mail</label><br/>
+                    <input id="email" ng-model="user.email" required>
+                </p>
+            </div>
+            <div id="right">
+                <p>
+                    <label for="city">City</label><br/>
+                    <select id="city" ng-model="user.city"
+                            ng-options="city.zip + ' ' + city.name for city in cities" required>
+                        <option></option> <!--initial empty option-->
+                    </select>
+                    <button type="button" ng-click="openNewCityModal()">Add new..</button>
+                </p>
+                <p>
+                    <label for="address">Address</label><br/>
+                    <input id="address" ng-model="user.address" required>
+                </p>
+                <p>
+                    <label for="password">Password</label><br/>
+                    <input id="password" ng-model="user.password" type="password" required>
+                </p>
+                <p>
+                    <label for="passwordConfirm">Confirm Password</label><br/>
+                    <input type="password" id="passwordConfirm" ng-model="user.passwordConfirm" required>
+                </p>
+            </div>
+            <div id="submitButtonWrapper">
+                <button id="submit" type="submit">Register</button>
+            </div>
         </form>
     </div>
 </div>

@@ -2,41 +2,41 @@ h1 {
     padding-bottom: 10px;
 }
 
-.register {
+.container {
     text-align: center;
 }
 
-.formWrapper {
-    padding-top: 20px;
-    margin: auto;
-    vertical-align: middle;
-    display: inline-block;
-    height: 350px;
-    width: 800px;
-    border-radius: 25px;
-    border: solid rgba(200, 200, 200, 0.7);
-    background: rgba(200, 200, 200, 0.1);
+#left {
+    float: left;
+    padding-right: 20px;
+    text-align: left;
+}
+
+#right {
+    float: right;
+    padding-left: 20px;
+    text-align: left;
+}
+
+#submit {
+    margin: 20px auto auto;
 }
 
 form {
     display: inline-block;
 }
 
-td {
-    text-align: center;
-    padding: 0 100px;
-}
-
-tr:nth-child(even) > td {
-    padding-bottom: 10px;
-}
-
-.inputLabelCell {
-    text-align: left;
-}
-
-input, select, textarea {
+input, textarea {
     width: 200px;
+
+    -ms-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+select {
+    width: 120px;
 
     -ms-box-sizing: content-box;
     -moz-box-sizing: content-box;
@@ -47,9 +47,3 @@ input, select, textarea {
 .ng-pristine .ng-invalid-required {
     box-shadow: none;
 }
-
-/*label[required]:after {*/
-/*content: '*';*/
-/*color: red;*/
-/*display: inline;*/
-/*}*/

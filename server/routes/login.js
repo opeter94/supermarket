@@ -12,12 +12,7 @@ var loginPage = path.join(loginAppRoot, 'login.html');
 
 router.post('/login', function (req, res) {
     console.log(req.body.user.userName);
-    console.log(req.body.user.password);
-    models.City.findAll().then(function (cities) {
-        cities.forEach(function (city) {
-            console.log(city.name, city.zip);
-        })
-    });
+    console.log(req.body.user.password.toString());
     res.sendFile(loginPage);
 });
 

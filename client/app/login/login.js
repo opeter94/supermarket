@@ -5,7 +5,6 @@ angular.module('supermarketApp')
         $stateProvider
             .state('login', {
                 url: '/login',
-                templateUrl: '/app/login/login.html',
-                controller: 'LoginController'
+                templateUrl: '/app/login/login.html'
             });
     });

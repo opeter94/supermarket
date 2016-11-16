@@ -1,24 +1,18 @@
 <link href="/app/login/login.css" rel="stylesheet" type="text/css">
-<div class="container login">
-    <h1>Login</h1><br/><br/>
-    <form ng-submit="submitForm()">
-        <table>
-            <tr>
-                <td class="inputLabelCell"><label for="userName">Username</label></td>
-            <tr>
-                <td><input id="userName" ng-model="user.userName" required><br/></td>
-            </tr>
-            <tr>
-                <td class="inputLabelCell"><label for="password">Password</label></td>
-            <tr>
-                <td><input id="password" ng-model="user.password" type="password" required><br/></td>
-            </tr>
-            <tr>
-                <td>
-                    <br/>
-                    <button name="login" id="login" type="submit">Login</button>
-                </td>
-            </tr>
-        </table>
-    </form>
+<div class="container">
+    <h1>Welcome to SUPERmarket</h1>
+    <h3>Please login or register from the menu</h3><br/><br/>
+    <div class="inner">
+        <form ng-submit="submit()">
+            <p>
+                <label for="userName">Username</label><br/>
+                <input id="userName" ng-model="user.userName" required>
+            </p>
+            <p>
+                <label for="password">Password</label><br/>
+                <input id="password" ng-model="user.password" type="password" required>
+            </p>
+            <button name="login" id="login" type="submit">Login</button>
+        </form>
+    </div>
 </div>

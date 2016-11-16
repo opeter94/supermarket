@@ -48,3 +48,18 @@ body {
     padding: 9px;
     color: #333;
 }
+
+.inner {
+    padding: 20px 100px;
+
+    display: inline-block;
+    vertical-align: bottom;
+
+    height: auto;
+    width: auto;
+
+    border-radius: 25px;
+    border: solid rgba(200, 200, 200, 0.7);
+
+    background: rgba(200, 200, 200, 0.1);
+}

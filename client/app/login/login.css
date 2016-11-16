@@ -1,16 +1,7 @@
-td {
-    text-align: center;
-    padding: 3px;
-}
-
 form {
     display: inline-block;
 }
 
 div {
     text-align: center;
-}
-
-.inputLabelCell {
-    text-align: left;
 }
