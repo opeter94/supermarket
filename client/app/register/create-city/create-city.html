@@ -1,0 +1,26 @@
+<link href="/app/register/create-city/create-city.css" rel="stylesheet" type="text/css">
+<div>
+    <div class="modal-header">
+        <h3>Add new city</h3>
+    </div>
+
+    <div class="modal-body">
+        <div id="container">
+            <form>
+                <p>
+                    <label for="name">City name</label><br/>
+                    <input id="name" ng-model="city.name" required>
+                </p>
+                <p>
+                    <label for="zip">City zip</label><br/>
+                    <input id="zip" ng-model="city.zip" required>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="close()" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" ng-click="submit()">Add</button>
+    </div>
+</div>

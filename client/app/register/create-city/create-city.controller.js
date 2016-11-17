@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('supermarketApp')
-    .controller('NewCityController', function ($scope, $http, $uibModalInstance, $timeout, requiredInputMarker) {
+    .controller('CreateCityController', function ($scope, $http, $uibModalInstance, $timeout, requiredInputMarker) {
         $uibModalInstance.rendered.then(function () {
             requiredInputMarker.markLabelsOfRequiredInputs();
         });
@@ -13,11 +13,11 @@ angular.module('supermarketApp')
             $http({
                 method: 'POST',
                 url: '/createCity',
-                data: {city: $scope.city}
+                data: {product: $scope.product}
             })
                 .then(function (response) {
                     alert('City successfully added.');
-                    $uibModalInstance.close($scope.city);
+                    $uibModalInstance.close($scope.product);
                 }, function (response) {
                     alert('City already exists in our database! Please select it from the dropdown menu.');
                     $uibModalInstance.close();

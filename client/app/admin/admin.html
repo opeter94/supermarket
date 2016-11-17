@@ -1,0 +1,20 @@
+<link href="/app/admin/admin.css" rel="stylesheet" type="text/css">
+<div class="container">
+        <div class="inner" id="menu">
+            <p>
+                <a href ng-click="openCreateCategoryModal()">Add new category</a>
+            </p>
+            <p>
+                <a href ng-click="openCreateProductModal()">Add new product</a>
+            </p>
+        </div>
+
+        <div id="categories">
+            <div ng-repeat="category in categories">
+                <h3>{{category.name}}</h3>
+                <!--<ul ng-repeat="product in getProducts(category)">-->
+                    <!--<li>{{product.name}}</li>-->
+                <!--</ul>-->
+            </div>
+        </div>
+</div>

@@ -15,7 +15,7 @@ angular.module('supermarketApp')
                         firstName: $scope.user.firstName,
                         lastName: $scope.user.lastName,
                         email: $scope.user.email,
-                        cityId: $scope.user.city.cityId,
+                        cityId: $scope.user.product.cityId,
                         address: $scope.user.address,
                         password: CryptoJS.MD5($scope.user.password).toString()
 
@@ -31,10 +31,10 @@ angular.module('supermarketApp')
                 });
         }
 
-        $scope.openNewCityModal = function () {
+        $scope.openCreateCityModal = function () {
             $scope.modalInstance = $uibModal.open({
-                templateUrl: '/app/register/new-city/new-city.html',
-                controller: 'NewCityController'
+                templateUrl: '/app/register/create-city/create-city.html',
+                controller: 'CreateCityController'
             });
             $scope.modalInstance.result
                 .then(function (newCity) {
