@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('supermarketApp')
-    .controller('RegisterController', function ($scope, $http, $uibModal, requiredInputMarker) {
+    .controller('RegisterController', function ($scope, $http, $uibModal, $window, requiredInputMarker) {
         requiredInputMarker.markLabelsOfRequiredInputs();
         getCities();
 
@@ -15,19 +15,28 @@ angular.module('supermarketApp')
                         firstName: $scope.user.firstName,
                         lastName: $scope.user.lastName,
                         email: $scope.user.email,
-                        cityId: $scope.user.product.cityId,
+                        cityId: $scope.user.city.cityId,
                         address: $scope.user.address,
                         password: CryptoJS.MD5($scope.user.password).toString()
 
                     }
                 }
-            })
+            }).then(function (response) {
+                $window.location.href = '/';
+            }, function (response) {
+                if (response.status === 409) {
+                    alert('Username already in use.');
+                }
+            });
         };
 
         function getCities() {
             $http.get('/getCities')
                 .then(function (response) {
                     $scope.cities = response.data;
+                    $scope.cities.sort(function (a, b) {
+                        return a.name.localeCompare(b.name);
+                    });
                 });
         }
 
@@ -38,7 +47,7 @@ angular.module('supermarketApp')
             });
             $scope.modalInstance.result
                 .then(function (newCity) {
-                    $scope.cities.push(newCity);
+                    getCities();
                 });
         };
     });

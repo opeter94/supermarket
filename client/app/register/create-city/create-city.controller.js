@@ -13,11 +13,11 @@ angular.module('supermarketApp')
             $http({
                 method: 'POST',
                 url: '/createCity',
-                data: {product: $scope.product}
+                data: {city: $scope.city}
             })
                 .then(function (response) {
                     alert('City successfully added.');
-                    $uibModalInstance.close($scope.product);
+                    $uibModalInstance.close($scope.city);
                 }, function (response) {
                     alert('City already exists in our database! Please select it from the dropdown menu.');
                     $uibModalInstance.close();
