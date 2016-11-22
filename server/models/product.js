@@ -12,6 +12,10 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING(45),
             allowNull: false
         },
+        unit: {
+            type: DataTypes.STRING(45),
+            allowNull: false
+        },
         price: {
             type: DataTypes.INTEGER(10).UNSIGNED,
             allowNull: false

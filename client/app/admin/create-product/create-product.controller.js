@@ -19,9 +19,7 @@ angular.module('supermarketApp')
                     alert('Product successfully added.');
                     $uibModalInstance.close($scope.product);
                 }, function (response) {
-                    if (response.status === 404) {
-                        alert('Category not found!');
-                    } else if (response.status === 409) {
+                    if (response.status === 409) {
                         alert('Product already exists!');
                     }
                 });

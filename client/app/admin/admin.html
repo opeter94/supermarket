@@ -9,12 +9,14 @@
             </p>
         </div>
 
-        <div id="categories">
+        <div id="categoriesContainer">
+            <h1>All products</h1>
+            <span>(click name to edit)</span>
             <div ng-repeat="category in categories">
-                <h3>{{category.name}}</h3>
-                <!--<ul ng-repeat="product in getProducts(category)">-->
-                    <!--<li>{{product.name}}</li>-->
-                <!--</ul>-->
+                <a href ng-click="openEditCategoryModal(category)"><h3>{{category.name}}</h3></a>
+                <ul ng-repeat="product in category.products">
+                    <li><a href ng-click="openEditProductModal(product)">{{product.name}} {{product.price}} Ft/{{product.unit}}</a></li>
+                </ul>
             </div>
         </div>
 </div>

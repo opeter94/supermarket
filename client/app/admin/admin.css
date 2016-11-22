@@ -2,7 +2,7 @@
     float: left;
 }
 
-#categories {
-    float: right;
+#categoriesContainer {
+    float: left;
+    padding-left: 100px;
 }
-

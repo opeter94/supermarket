@@ -1,7 +1,7 @@
-<link href="/app/admin/create-product/create-product.css" rel="stylesheet" type="text/css">
+<link href="/app/admin/edit-category/edit-category.css" rel="stylesheet" type="text/css">
 <div>
     <div class="modal-header">
-        <h3>Add new product</h3>
+        <h3>Edit product</h3>
     </div>
 
     <div class="modal-body">
@@ -9,21 +9,20 @@
             <form>
                 <p>
                     <label for="name">Product name</label><br/>
-                    <input id="name" ng-model="product.name" required>
+                    <input id="name" ng-model="editedProduct.name" required>
                 </p>
                 <p>
                     <label for="price">Product price</label><br/>
-                    <input id="price" ng-model="product.price" required>
+                    <input id="price" ng-model="editedProduct.price" required>
                 </p>
                 <p>
                     <label for="unit">Unit</label><br/>
-                    <input id="unit" ng-model="product.unit" required>
+                    <input id="unit" ng-model="editedProduct.unit" required>
                 </p>
                 <p>
                     <label for="category">Category</label><br/>
-                    <select id="category" ng-model="product.category"
+                    <select id="category" ng-model="editedProduct.category"
                             ng-options="category.name for category in categories" required>
-                        <option></option> <!--initial empty option-->
                     </select>
                 </p>
             </form>
@@ -32,6 +31,6 @@
 
     <div class="modal-footer">
         <button type="button" class="btn btn-default" ng-click="close()" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" ng-click="submit()">Add</button>
+        <button type="button" class="btn btn-primary" ng-click="submit()">Edit</button>
     </div>
 </div>

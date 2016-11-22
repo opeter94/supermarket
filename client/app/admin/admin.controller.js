@@ -3,25 +3,26 @@
 angular.module('supermarketApp')
     .controller('AdminController', function ($scope, $http, $uibModal, requiredInputMarker) {
         requiredInputMarker.markLabelsOfRequiredInputs();
-        getCategories();
+        getCategoriesWithProducts();
 
-        function getCategories() {
-            $http.get('/getCategories')
+        function getCategoriesWithProducts() {
+            $http.get('/getCategoriesWithProducts')
                 .then(function (response) {
                     $scope.categories = response.data;
+                    sortCategoriesAndProducts()
                 });
         }
 
-        $scope.getProducts = function (category) {
-            $http({
-                method: 'GET',
-                url: '/getProducts',
-                params: {categoryId: category.id}
+        function sortCategoriesAndProducts() {
+            $scope.categories.sort(function (a, b) {
+                return a.name.localeCompare(b.name);
+            });
+            $scope.categories.forEach(function(category) {
+                category.products.sort(function (a, b) {
+                    return a.name.localeCompare(b.name);
+                });
             })
-                .then(function (response) {
-                    $scope.products = response.data;
-                })
-        };
+        }
 
         $scope.openCreateCategoryModal = function () {
             $scope.modalInstance = $uibModal.open({
@@ -30,18 +31,48 @@ angular.module('supermarketApp')
             });
             $scope.modalInstance.result
                 .then(function (newCategory) {
-                    $scope.categories.push(newCategory);
+                    getCategoriesWithProducts();
                 });
         };
 
         $scope.openCreateProductModal = function () {
             $scope.modalInstance = $uibModal.open({
                 templateUrl: '/app/admin/create-product/create-product.html',
-                controller: 'CreateProductController'
+                controller: 'CreateProductController',
+                scope: $scope
             });
             $scope.modalInstance.result
                 .then(function (newProduct) {
-                    //$scope.products.push(newProduct);
+                    getCategoriesWithProducts();
+                });
+        };
+
+        $scope.openEditCategoryModal = function (category) {
+            $scope.modalInstance = $uibModal.open({
+                templateUrl: '/app/admin/edit-category/edit-category.html',
+                controller: 'EditCategoryController',
+                resolve: {
+                    category: category
+                }
+            });
+            $scope.modalInstance.result
+                .then(function (editedCategory) {
+                    getCategoriesWithProducts();
+                });
+        };
+
+        $scope.openEditProductModal = function (product) {
+            $scope.modalInstance = $uibModal.open({
+                templateUrl: '/app/admin/edit-product/edit-product.html',
+                controller: 'EditProductController',
+                resolve: {
+                    product: product
+                },
+                scope: $scope
+            });
+            $scope.modalInstance.result
+                .then(function (editedProduct) {
+                    getCategoriesWithProducts();
                 });
         };
     });

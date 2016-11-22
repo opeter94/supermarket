@@ -1,0 +1,22 @@
+<link href="/app/admin/edit-category/edit-category.css" rel="stylesheet" type="text/css">
+<div>
+    <div class="modal-header">
+        <h3>Edit category</h3>
+    </div>
+
+    <div class="modal-body">
+        <div id="container">
+            <form>
+                <p>
+                    <label for="name">Category name</label><br/>
+                    <input id="name" ng-model="newCategoryName" required>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="close()" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" ng-click="submit()">Edit</button>
+    </div>
+</div>
