@@ -10,6 +10,14 @@ var passport = require('../config/passport');
 var loginAppRoot = path.join(config.clientRoot, 'app', 'login');
 var loginPage = path.join(loginAppRoot, 'login.html');
 
+router.get('/initialLoginCheck', function (req, res) {
+    if (req.user) {
+        res.status(200).json(req.user.isAdmin);
+    } else {
+        res.sendStatus(401);
+    }
+});
+
 router.post('/login', function (req, res, next) {
     // has to put user data directly on body to make passport work
     req.body.username = req.body.user.userName;
@@ -29,12 +37,9 @@ router.post('/login', function (req, res, next) {
     })(req, res, next);
 });
 
-router.get('/initialLoginCheck', function (req, res) {
-    if (req.user) {
-        res.status(200).json(req.user.isAdmin);
-    } else {
-        res.sendStatus(401);
-    }
+router.post('/logout', function (req, res) {
+    req.logOut();
+    res.sendStatus(200);
 });
 
 module.exports = router;

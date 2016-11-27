@@ -9,4 +9,6 @@ angular.module('supermarketApp')
         $scope.isAdmin= function() {
             return auth.isAdmin;
         };
+
+        $scope.logout = auth.logout;
     });

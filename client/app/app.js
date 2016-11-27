@@ -58,25 +58,43 @@ angular.module('supermarketApp', [
             }
         }
     })
-    .factory('auth', ['$http', '$q', '$state', '$location', function ($http, $q) {
-        return {
-            initialize : function () {
-                var deferred = $q.defer();
-                if (auth.isLoggedIn === undefined || auth.isAdmin === undefined) {
-                    $http.get('/initialLoginCheck')
-                        .then(function userIsLoggedIn(response) {
-                            auth.isLoggedIn = true;
-                            auth.isAdmin = response.data;
-                            deferred.resolve();
-                        }, function userIsNotLoggedIn(response) {
-                            auth.isLoggedIn = false;
-                            auth.isAdmin = false;
-                            deferred.reject();
-                        });
-                }
-                return deferred.promise;
+    .factory('auth', ['$http', '$q', '$state', function ($http, $q, $state) {
+        var auth = {};
+        auth.initialize = function () {
+            var deferred = $q.defer();
+            if (auth.isLoggedIn === undefined || auth.isAdmin === undefined) {
+                $http.get('/initialLoginCheck')
+                    .then(function userIsLoggedIn(response) {
+                        auth.isLoggedIn = true;
+                        auth.isAdmin = response.data;
+                        deferred.resolve();
+                    }, function userIsNotLoggedIn(response) {
+                        auth.isLoggedIn = false;
+                        auth.isAdmin = false;
+                        deferred.reject();
+                    });
+            } else {
+                deferred.resolve();
             }
-        }
+            return deferred.promise;
+        };
+        auth.logout = function () {
+            $http({
+                method: 'POST',
+                url: '/logout',
+                data: {}
+            })
+                .then(function successfulLogout(response) {
+                    auth.isLoggedIn = false;
+                    auth.isAdmin = false;
+                    $state.go('home');
+                }, function errorLogout(response) {
+                    $state.go('home');
+                    alert('Error while logging out.');
+                });
+        };
+
+        return auth;
     }])
     .provider('stateAuthenticator', function () {
         return {
