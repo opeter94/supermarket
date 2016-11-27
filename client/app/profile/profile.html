@@ -1,0 +1,46 @@
+<link href="/app/profile/profile.css" rel="stylesheet" type="text/css">
+<div class="container">
+    <h1 id="userName">{{user.userName}}'s profile</h1>
+    <div class="inner" id="upper">
+        <form ng-submit="editUser()">
+            <p>
+                <label for="firstName">First Name</label><br/>
+                <input id="firstName" ng-model="user.firstName">
+            </p>
+            <p>
+                <label for="lastName">Last Name</label><br/>
+                <input id="lastName" ng-model="user.lastName">
+            </p>
+            <p>
+                <label for="email">E-Mail</label><br/>
+                <input id="email" ng-model="user.email" required>
+            </p>
+            <p>
+                <label for="city">City</label><br/>
+                <select id="city" ng-model="user.city"
+                        ng-options="city.zip + ' ' + city.name for city in cities" required>
+                    <option></option> <!--initial empty option-->
+                </select>
+                <button type="button" ng-click="openCreateCityModal()">Add new..</button>
+            </p>
+            <p>
+                <label for="address">Address</label><br/>
+                <input id="address" ng-model="user.address" required>
+            </p>
+            <button id="submitProfile" type="submit">Save</button>
+        </form>
+    </div>
+    <div class="inner" id="lower">
+        <form ng-submit="editPassword()">
+            <p>
+                <label for="password">Password</label><br/>
+                <input id="password" ng-model="user.password" type="password" required>
+            </p>
+            <p>
+                <label for="passwordConfirm">Confirm Password</label><br/>
+                <input type="password" id="passwordConfirm" ng-model="user.passwordConfirm" required>
+            </p>
+            <button id="submitPassword" type="submit">Change password</button>
+        </form>
+    </div>
+</div>

@@ -9,7 +9,7 @@ angular.module('supermarketApp')
             $uibModalInstance.dismiss();
         };
 
-        $scope.submit = function () {
+        $scope.createCity = function () {
             $http({
                 method: 'POST',
                 url: '/createCity',

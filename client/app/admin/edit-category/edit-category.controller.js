@@ -12,7 +12,7 @@ angular.module('supermarketApp')
             $uibModalInstance.dismiss();
         };
 
-        $scope.submit = function () {
+        $scope.editCategory = function () {
             var editedCategory = JSON.parse(JSON.stringify($scope.category));
             editedCategory.name = $scope.newCategoryName;
             $http({

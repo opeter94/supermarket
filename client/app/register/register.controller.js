@@ -5,7 +5,7 @@ angular.module('supermarketApp')
         requiredInputMarker.markLabelsOfRequiredInputs();
         getCities();
 
-        $scope.submit = function () {
+        $scope.createUser = function () {
             $http({
                 method: 'POST',
                 url: '/createUser',
@@ -17,8 +17,8 @@ angular.module('supermarketApp')
                         email: $scope.user.email,
                         cityId: $scope.user.city.cityId,
                         address: $scope.user.address,
-                        password: CryptoJS.MD5($scope.user.password).toString()
-
+                        password: CryptoJS.MD5($scope.user.password).toString(),
+                        isAdmin: $scope.user.isAdmin
                     }
                 }
             }).then(function (response) {

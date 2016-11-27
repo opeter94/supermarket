@@ -18,7 +18,7 @@ angular.module('supermarketApp')
             $uibModalInstance.dismiss();
         };
 
-        $scope.submit = function () {
+        $scope.editProduct = function () {
             $http({
                 method: 'POST',
                 url: '/editProduct',

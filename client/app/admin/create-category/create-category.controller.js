@@ -9,7 +9,7 @@ angular.module('supermarketApp')
             $uibModalInstance.dismiss();
         };
 
-        $scope.submit = function () {
+        $scope.createCategory = function () {
             $http({
                 method: 'POST',
                 url: '/createCategory',

@@ -14,6 +14,21 @@ angular.module('supermarketApp', [
             enabled: true,
             requireBase: false
         });
+
+        // interceptor sending unauthorized user to login
+        $httpProvider.interceptors.push(['$q', '$injector', function ($q, $injector) {
+            return {
+                response: function (response) {
+                    return response;
+                },
+                responseError: function (response) {
+                    if (response.status === 401 && response.config.url !== '/initialLoginCheck') {
+                        $injector.get('$state').go('login');
+                    }
+                    return $q.reject(response);
+                }
+            };
+        }]);
     })
     .factory('requiredInputMarker', function () {
         return {
@@ -42,4 +57,64 @@ angular.module('supermarketApp', [
                 });
             }
         }
-    });
+    })
+    .factory('auth', ['$http', '$q', '$state', '$location', function ($http, $q) {
+        return {
+            initialize : function () {
+                var deferred = $q.defer();
+                if (auth.isLoggedIn === undefined || auth.isAdmin === undefined) {
+                    $http.get('/initialLoginCheck')
+                        .then(function userIsLoggedIn(response) {
+                            auth.isLoggedIn = true;
+                            auth.isAdmin = response.data;
+                            deferred.resolve();
+                        }, function userIsNotLoggedIn(response) {
+                            auth.isLoggedIn = false;
+                            auth.isAdmin = false;
+                            deferred.reject();
+                        });
+                }
+                return deferred.promise;
+            }
+        }
+    }])
+    .provider('stateAuthenticator', function () {
+        return {
+            userOnly: {
+                data: function ($q, $state, auth) {
+                    var deferred = $q.defer();
+                    auth.initialize()
+                        .then(function userIsLoggedIn() {
+                            deferred.resolve();
+                        }, function userIsNotLoggedIn() {
+                            $state.go('login');
+                            deferred.reject();
+                        });
+                    return deferred.promise;
+                }
+            },
+            adminOnly: {
+                data: function ($q, $state, auth) {
+                    var deferred = $q.defer();
+                    auth.initialize()
+                        .then(function userIsLoggedIn() {
+                            if (auth.isAdmin) {
+                                deferred.resolve();
+                            } else {
+                                $state.go('home');
+                                deferred.reject();
+                            }
+                        }, function userIsNotLoggedIn() {
+                            $state.go('home');
+                            deferred.reject();
+                        });
+                    return deferred.promise;
+                }
+            },
+            // provider provides only utility, no data is involved
+            $get: function () {
+                return null;
+            }
+        }
+    })
+;

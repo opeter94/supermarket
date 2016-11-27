@@ -1,5 +1,5 @@
 <link href="/common_components/navbar/navbar.css" rel="stylesheet" type="text/css">
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="NavbarController">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -14,17 +14,20 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li>
+                <li ng-show="!isLoggedIn()">
                     <a ui-sref="login">Login</a>
                 </li>
-                <li>
+                <li ng-show="isAdmin()">
                     <a ui-sref="admin">Admin</a>
                 </li>
-                <li>
+                <li ng-show="!isLoggedIn()">
                     <a ui-sref="register">Register</a>
                 </li>
-                <li>
+                <li ng-show="isLoggedIn()">
                     <a ui-sref="profile">Profile</a>
+                </li>
+                <li ng-show="isLoggedIn()">
+                    <a ui-sref="logout">Logout</a>
                 </li>
             </ul>
         </div>
