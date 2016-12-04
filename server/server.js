@@ -7,6 +7,7 @@ var registerRouter = require('./routes/register');
 var adminRouter = require('./routes/admin');
 var profileRouter = require('./routes/profile');
 var authRouter = require('./routes/auth');
+var homeRouter = require('./routes/home');
 var config = require('./config/config');
 var logger = require('./libs/logger/logger');
 var bodyParser = require('body-parser');
@@ -48,6 +49,7 @@ app.use(registerRouter);
 app.use(adminRouter);
 app.use(profileRouter);
 app.use(authRouter);
+app.use(homeRouter);
 // pageNotFound must be the last one
 app.use(pageNotFoundRouter);
 

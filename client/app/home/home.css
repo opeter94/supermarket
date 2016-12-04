@@ -1,0 +1,9 @@
+#cart {
+    border: solid rgba(200, 200, 200, 0.7);
+
+    background: rgba(200, 200, 200, 0.1);
+}
+
+.lead {
+    padding-left: 10px;
+}

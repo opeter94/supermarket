@@ -11,6 +11,10 @@ module.exports = function(sequelize, DataTypes) {
         count: {
             type: DataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
+        },
+        price: {
+            type: DataTypes.INTEGER(10).UNSIGNED,
+            allowNull: false
         }
     }, {
         classMethods: {

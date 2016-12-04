@@ -45,13 +45,5 @@ passport.adminOnly = function(req, res, next) {
     }
 };
 
-//passport.auth = function(req, res, next) {
-//    if (!req.user) {
-//        res.send(401);
-//    } else {
-//        next();
-//    }
-//};
-
 module.exports = passport;
 

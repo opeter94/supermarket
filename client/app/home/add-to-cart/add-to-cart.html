@@ -1,0 +1,23 @@
+<link href="/app/admin/edit-category/edit-category.css" rel="stylesheet" type="text/css">
+<div>
+    <div class="modal-header">
+        <h3>Edit product</h3>
+    </div>
+
+    <div class="modal-body">
+        <div id="container">
+            <h1>{{product.name}}</h1>
+            <form>
+                <p>
+                    <label for="quantity">How many?</label><br/>
+                    <input id="quantity" ng-model="product.quantity" required>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="close()" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" ng-click="addToCart()">Add to cart</button>
+    </div>
+</div>
