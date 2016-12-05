@@ -18,7 +18,7 @@ angular.module('supermarketApp')
                         cityId: $scope.user.city.cityId,
                         address: $scope.user.address,
                         password: CryptoJS.MD5($scope.user.password).toString(),
-                        isAdmin: $scope.user.isAdmin
+                        isAdmin: false
                     }
                 }
             }).then(function (response) {
@@ -26,6 +26,8 @@ angular.module('supermarketApp')
             }, function (response) {
                 if (response.status === 409) {
                     alert('Username already in use.');
+                } else {
+                    alert('Server error.')
                 }
             });
         };

@@ -20,7 +20,7 @@
             <div class="row carousel-holder">
                 <h1>{{selectedCategory.name}}</h1>
                 <div class="col-md-12">
-                    <a href ng-click="openAddToCartModal(product)" ng-repeat-start="product in selectedCategory.products">{{product.name}}</a><br ng-repeat-end />
+                    <a href ng-click="openAddToCartModal(product)" ng-repeat-start="product in selectedCategory.products">{{product.name}} {{product.price}}Ft/{{product.unit}}</a><br ng-repeat-end />
                 </div>
             </div>
         </div>
