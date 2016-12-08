@@ -31,8 +31,7 @@ router.post('/createUser', function (req, res, next) {
             res.sendFile(registerPage);
         })
     ;
-})
-;
+});
 
 router.post('/createCity', function (req, res) {
     models.City.findOrCreate({where: req.body.city})
