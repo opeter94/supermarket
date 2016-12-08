@@ -7,3 +7,7 @@
 .lead {
     padding-left: 10px;
 }
+
+#searchField {
+    width : 100%;
+}

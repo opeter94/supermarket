@@ -16,11 +16,15 @@
         </div>
 
 
+        <div class="col-md-6">
+            <input id="searchField" ng-model="searchField"/>
+            <button id="searchButton" type="button" class="btn btn-primary" ng-click="search()">Search</button>
+        </div>
         <div class="col-md-9">
             <div class="row carousel-holder">
                 <h1>{{selectedCategory.name}}</h1>
                 <div class="col-md-12">
-                    <a href ng-click="openAddToCartModal(product)" ng-repeat-start="product in selectedCategory.products">{{product.name}} {{product.price}}Ft/{{product.unit}}</a><br ng-repeat-end />
+                    <a href ng-click="openAddToCartModal(product)" ng-repeat-start="product in selectedCategory.products">{{product.name}} {{product.price}} Ft/{{product.unit}}</a><br ng-repeat-end />
                 </div>
             </div>
         </div>

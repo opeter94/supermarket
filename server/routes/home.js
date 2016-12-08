@@ -27,4 +27,32 @@ router.post('/buy', passport.userOnly, function (req, res) {
         })
 });
 
+router.get('/search', function (req, res) {
+    var searchString = req.query.searchField;
+    models.Product.findAll({where: {name: {$like: '%' + searchString + '%'}}})
+        .then(function (products) {
+            models.Category.findAll({
+                    where: {
+                        categoryId: products.map(function (product) {
+                            return product.categoryId;
+                        })
+                    }
+                })
+                .then(function (categories) {
+                    var categoriesWithProducts = [];
+                    categories.forEach(function (category) {
+                        var categoryObject = category.toJSON();
+                        categoryObject.products = [];
+                        products.forEach(function (product) {
+                            if (category.categoryId === product.categoryId) {
+                                categoryObject.products.push(product.toJSON());
+                            }
+                        });
+                        categoriesWithProducts.push(categoryObject);
+                    });
+                    res.status(200).json(categoriesWithProducts);
+                });
+        })
+});
+
 module.exports = router;

@@ -53,6 +53,19 @@ angular.module('supermarketApp')
                 });
         };
 
+        $scope.search = function() {
+            $http({
+                method: 'GET',
+                url: '/search',
+                params: {searchField: $scope.searchField}
+            })
+                .then(function (response) {
+                    $scope.categories = response.data;
+                    sortCategoriesAndProducts();
+                    $scope.selectedCategory = $scope.categories[0];
+                })
+        };
+
         $scope.openAddToCartModal = function (product) {
             $scope.modalInstance = $uibModal.open({
                 templateUrl: '/app/home/add-to-cart/add-to-cart.html',
